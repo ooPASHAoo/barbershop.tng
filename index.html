@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Барбершоп</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 <header class="main-header">
-  <div class="layout-center">
-    <nav>
+  <div class="layout-center clearfix">
+    <nav class="navigation">
       <ul>
         <li><a href="#">ИНФОРМАЦИЯ</a></li>
         <li><a href="#">НОВОСТИ</a></li>
@@ -17,7 +18,9 @@
         <li><a href="#">КОНТАКТЫ</a></li>
       </ul>
     </nav>
-    <a class="btn btn-login" href="#">ВХОД</a>
+    <div class="user-block">
+      <a class="btn btn-login" href="#">ВХОД</a>
+    </div>
   </div>
 </header>
 
@@ -25,7 +28,7 @@
   <div class="layout-center">
     <img class="logo" src="img/main-logo.png" alt="Бородинский">
 
-    <section class="features">
+    <section class="features clearfix">
       <article>
         <h3>БЫСТРО</h3>
         <p>МЫ ДЕЛАЕМ СВОЮ РАБОТУ БЫСТРО! ДВА ЧАСА ПРОЛЕТЯТ НЕЗАМЕТНО И ВЫ — СЧАСТЛИВЫЙ ОБЛАДЕТЕЛЬ СТИЛЬНОЙ
@@ -42,8 +45,8 @@
       </article>
     </section>
 
-    <section class="news-photo">
-      <section class="news">
+    <div class="index-content clearfix">
+      <section class="left-section news">
         <h2>НОВОСТИ</h2>
         <article>
           <p>НАМ НАКОНЕЦ ЗАВЕЗЛИ ЯГЕРМАЙСТЕР! ТЕПЕРЬ ВЫ МОЖЕТЕ ПРОПУСТИТЬ СТАКАНЧИК ВО ВРЕМЯ СТРИЖКИ</p>
@@ -56,16 +59,16 @@
         </article>
         <a class="btn" href="#">ВСЕ НОВОСТИ</a>
       </section>
-      <section class="photo">
+      <section class="right-section photo">
         <h2>ФОТОГАЛЕРЕЯ</h2>
         <img src="img/our-room.jpg" alt="Наш зал">
         <a class="btn prev" href="#">НАЗАД</a>
         <a class="btn next" href="#">ВПЕРЕД</a>
       </section>
-    </section>
+    </div>
 
-    <section class="contact-reserv">
-      <section class="contact">
+    <div class="index-content clearfix">
+      <section class="left-section contact">
         <h2>КОНТАКТНАЯ ИНФОРМАЦИЯ</h2>
         <p>БАРБЕРШОП «БОРОДИНСКИЙ»<br> АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, Б. КОНЮШЕННАЯ, Д. 19/8<br> ТЕЛЕФОН: +7 (495) 666-02-66
         </p>
@@ -73,7 +76,7 @@
         <a class="btn map" href="#">КАК ПРОЕХАТЬ</a>
         <a class="btn feedback" href="#">ОБРАТНАЯ СВЯЗЬ</a>
       </section>
-      <section class="reserv">
+      <section class="right-section reserv">
         <h2>ЗАПИСАТЬСЯ</h2>
         <p>УКАЖИТЕ ЖЕЛАЕМУЮ ДАТУ И ВРЕМЯ И МЫ СВЯЖЕМСЯ С ВАМИ ДЛЯ ПОДТВЕРЖДЕНИЯ БРОНИ</p>
         <form action="index.html" method="post">
@@ -84,12 +87,12 @@
           <button class="btn" type="button" name="sent">ОТПРАВИТЬ</button>
         </form>
       </section>
-    </section>
+    </div>
   </div>
 </main>
 
 <footer class="main-footer">
-  <div class="layout-center">
+  <div class="layout-center clearfix">
     <section class="contacts">
       <h4>БАРБЕРШОП «БОРОДИНСКИЙ»</h4>
       <p>АДРЕС: Г. САНКТ-ПЕТЕРБУРГ, УЛ. Б. КОНЮШЕННАЯ, Д. 19/8<br> КАК НАС НАЙТИ?<br> ТЕЛЕФОН: +7 (495) 666-02-66</p>
