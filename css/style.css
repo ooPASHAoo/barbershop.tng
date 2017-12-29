@@ -8,40 +8,62 @@
 /*background-color: rgba(200, 200, 0, 0.2); !* TEST ONLY *!*/
 /*outline: 1px solid rgba(200, 200, 0, 0.8); !* TEST ONLY *!*/
 
-.main-header,
-main,
-.main-footer {
-  background-color: rgba(100, 0, 0, 0.2); /* TEST ONLY */
-  outline: 1px solid rgba(200, 0, 0, 0.8); /* TEST ONLY */
-}
+/*.main-header,*/
+/*main,*/
+/*.main-footer {*/
+  /*background-color: rgba(100, 0, 0, 0.2); !* TEST ONLY *!*/
+  /*outline: 1px solid rgba(200, 0, 0, 0.8); !* TEST ONLY *!*/
+/*}*/
 
-.main-header .navigation,
-.main-header .user-block,
-main .logo,
-main .features,
-main .index-content,
-.main-footer .contacts,
-.main-footer .social,
-.main-footer .copyright {
-  background-color: rgba(0, 100, 0, 0.4); /* TEST ONLY */
-  outline: 1px solid rgba(0, 200, 0, 0.8); /* TEST ONLY */
-}
+/*.main-header .navigation,*/
+/*.main-header .user-block,*/
+/*main .logo,*/
+/*main .features,*/
+/*main .index-content,*/
+/*.main-footer .contacts,*/
+/*.main-footer .social,*/
+/*.main-footer .copyright {*/
+  /*background-color: rgba(0, 100, 0, 0.4); !* TEST ONLY *!*/
+  /*outline: 1px solid rgba(0, 200, 0, 0.8); !* TEST ONLY *!*/
+/*}*/
 
-main .features article,
-main .index-content .left-section,
-main .index-content .right-section {
-  background-color: rgba(0, 0, 100, 0.2); /* TEST ONLY */
-  outline: 1px solid rgba(0, 0, 200, 0.8); /* TEST ONLY */
-}
+/*main .features article,*/
+/*main .index-content .left-section,*/
+/*main .index-content .right-section {*/
+  /*background-color: rgba(0, 0, 100, 0.2); !* TEST ONLY *!*/
+  /*outline: 1px solid rgba(0, 0, 200, 0.8); !* TEST ONLY *!*/
+/*}*/
 
 /* ================== */
 /* ===== GLOBAL ===== */
 /* ================== */
 
-/*body,*/
-/*h1, h2, h3, h4, h5, h6 {*/
-  /*margin: 0;*/
-/*}*/
+body {
+  min-width: 960px; /* QUEST: ? */
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-transform: uppercase;
+  background: black url("../img/main-bg.jpg") no-repeat center top; /* background-color =(*/
+  color: white; /* QUEST: Сомнительно, но предлагают сразу контрастный ставить =/ */
+}
+
+.btn {
+  /* TODO-again: t=1:50 */
+  display: inline-block;
+  margin-right: 16px;
+  padding: 10px 30px;
+
+  font: inherit;
+  text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
+  text-transform: uppercase;
+
+  background-color: #000000;
+  border: none;
+}
 
 /*ul {*/
   /*margin: 0;*/
@@ -56,13 +78,18 @@ main .index-content .right-section {
 }
 
 .layout-center {
-  width: 940px;
+  width: 940px; /* QUEST: min-width?*/
   margin: 0 auto;
 }
 
 /* ======================== */
 /* ===== .main-header ===== */
 /* ======================== */
+
+.main-header {
+  background-color: black;
+  color: white;
+}
 
 /*- .navigation -*/
 
@@ -71,18 +98,75 @@ main .index-content .right-section {
   width: 790px;
 }
 
+.main-header .navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+}
+
 .main-header .navigation li {
-  float: left;
-  padding: 26px 20px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;  /* line-height -ом нельзя это делать на случай 2-ой строки */
+  font-weight: bold;
+  vertical-align: top;  /* QUEST: ? для показа намерений?*/
+}
+
+.main-header .navigation a {
+  display: block;
+  padding: 26px 20px; /* (72 - 20) / 2 = 26 */
+  text-decoration: none;
+  color: white;
+}
+
+.main-header .navigation a:hover {
+  background-color: #242424;
+  /* TODO: add animation */
 }
 
 /*- .user-block -*/
 
 .main-header .user-block {
   float: right;
-  width: 110px;
-  padding: 26px 20px;
-  text-align: right;
+  max-width: 110px;
+  /*padding: 26px 20px;*/
+  /*text-align: right;*/
+}
+
+.main-header .user-block a {  /* QUEST: == & .btn-login */ /* upd imho class need */
+  position: relative;
+  /*display: inline-block;*/  /* TODO: t=1:22 */
+  /*padding-left: 50px;*/ /* icon */
+  font-size: 16px;
+  line-height: 20px;    /* == */
+  display: block;
+  font-weight: bold;
+  padding: 26px 20px; /* (72 - 20) / 2 = 26 */
+  text-decoration: none;
+  color: white;
+}
+
+.main-header .user-block a:hover { /* QUEST: == & .btn-login */
+  background-color: #242424;
+  /* TODO: add animation */
+}
+
+.main-header .user-block a::before { /* TODO: Разобраться t=1:25 & NEED CONTAINER*/
+  content: "";
+  position: absolute;
+  top: 28px;  /* QUEST: align top-text-line */
+  left: 20px;
+  width: 18px;
+  height: 18px;
+  /*background: transparent ...;  TODO: sprite t=1:26 && transparent imho good*/
+  opacity: 0.3; /* TODO: NEED CONTAINER */
+}
+
+/*.main-header .user-block a:hover::before*/ /* QUEST */
+.main-header .user-block a::before:hover {
+  opacity: 0.1;
+  /* TODO: add animation */
 }
 
 /* ================ */
@@ -98,7 +182,7 @@ main {
 
 main .logo {
   display: block;
-  /*width: 368px; !* QUEST: ? || min-width || max-width *!*/
+  /*width: 368px; !* QUEST: t=1:33"Защита от дурака и блоку и img и в html О_о" нужно ли ? || min-width || max-width *!*/
   /*height: 204px;  !* QUEST: -//- *!*/
   margin: 0 auto;
 }
@@ -112,10 +196,40 @@ main .features {
 main .features article {
   float: left;
   width: 300px;
+  text-align: center;
 }
 
 main .features article:not(:last-child) {
   margin-right: 20px;
+}
+
+main .features article h3 { /* QUEST: TODO: Разобраться c h_ */
+  display: block; /* QUEST: ok? */
+  position: relative; /* QUEST: display<->position upd: see main .features article h3::after*/
+  margin-bottom: 30px;  /* QUEST: t=1:36 t=1:40 t=1:41(O_o)*/
+  padding-bottom: 35px; /* -//- */
+  font-size: 30px;
+  line-height: 42px;
+}
+
+main .features article h3::after {  /* QUEST: длинные имена =( */
+  /* TODO-again (!!!) t=1:41 */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  display: block; /*need?*/
+  width: 20px;
+  height: 20px;
+  margin-left: -10px; /*pzdc*/
+  background-color: white;
+  transform: rotate(45deg); /* ide ? */
+}
+
+main .features article p { /* QUEST: TODO: Разобраться c h_ */
+  padding: 10px; /* QUEST: можно всегда так делать? Нет ли проблем? */
+  padding-bottom: 0; /* QUEST: не удобно ( */
 }
 
 /*- .index-content -*/
@@ -130,8 +244,22 @@ main .index-content:not(:first-of-type) { /* QUEST: -//- */
 
 main .index-content {
   padding: 50px 80px;
-
+  color: black;
+  background: #f8f5f2 url("..");  /* TODO: image && shadow t=1:46*/
 }
+
+main .index-content h2 {  /* QUEST: порядок классов =/ */
+  margin: 0;
+  margin-bottom: 25px;  /* quest: -//- */
+  font-size: 30px;
+  line-height: 42px;
+}
+
+main .index-content p {  /* quest: -//- */
+  margin: 0;
+  margin-bottom: 25px;  /* quest: -//- */
+}
+
 
 main .index-content .left-section {
   float: left;
@@ -143,6 +271,10 @@ main .index-content .right-section {
   width: 300px;
 }
 
+main .index-content .news {
+  /* TODO: t=1:47*/
+}
+
 /* ======================== */
 /* ===== .main-footer ===== */
 /* ======================== */
@@ -150,6 +282,9 @@ main .index-content .right-section {
 .main-footer {
   padding-top: 60px;
   padding-bottom: 40px;
+
+  background: #222222; /*todo: ...t=2:05...*/
+  color: white; /*todo: ...t=2:05...*/
 }
 
 /*- .contacts -*/
