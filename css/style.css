@@ -11,8 +11,8 @@
 /*.main-header,*/
 /*main,*/
 /*.main-footer {*/
-  /*background-color: rgba(100, 0, 0, 0.2); !* TEST ONLY *!*/
-  /*outline: 1px solid rgba(200, 0, 0, 0.8); !* TEST ONLY *!*/
+/*background-color: rgba(100, 0, 0, 0.2); !* TEST ONLY *!*/
+/*outline: 1px solid rgba(200, 0, 0, 0.8); !* TEST ONLY *!*/
 /*}*/
 
 /*.main-header .navigation,*/
@@ -23,15 +23,15 @@
 /*.main-footer .contacts,*/
 /*.main-footer .social,*/
 /*.main-footer .copyright {*/
-  /*background-color: rgba(0, 100, 0, 0.4); !* TEST ONLY *!*/
-  /*outline: 1px solid rgba(0, 200, 0, 0.8); !* TEST ONLY *!*/
+/*background-color: rgba(0, 100, 0, 0.4); !* TEST ONLY *!*/
+/*outline: 1px solid rgba(0, 200, 0, 0.8); !* TEST ONLY *!*/
 /*}*/
 
 /*main .features article,*/
 /*main .index-content .left-section,*/
 /*main .index-content .right-section {*/
-  /*background-color: rgba(0, 0, 100, 0.2); !* TEST ONLY *!*/
-  /*outline: 1px solid rgba(0, 0, 200, 0.8); !* TEST ONLY *!*/
+/*background-color: rgba(0, 0, 100, 0.2); !* TEST ONLY *!*/
+/*outline: 1px solid rgba(0, 0, 200, 0.8); !* TEST ONLY *!*/
 /*}*/
 
 /* ================== */
@@ -39,36 +39,39 @@
 /* ================== */
 
 body {
-  min-width: 960px; /* QUEST: ? */
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: bold;
-  font-family: 'PT Sans Narrow', sans-serif;
+  min-width: 960px;
+  font: bold 14px/24px 'PT Sans Narrow', sans-serif;
   text-transform: uppercase;
-  background: black url("../img/main-bg.jpg") no-repeat center top; /* background-color =(*/
-  color: white; /* QUEST: Сомнительно, но предлагают сразу контрастный ставить =/ */
+  color: white;
+  background: black url("../img/main-bg.jpg") no-repeat center top;
 }
 
 .btn {
-  /* TODO-again: t=1:50 */
   display: inline-block;
   margin-right: 16px;
   padding: 10px 30px;
 
-  font: inherit;
-  text-align: center;
-  color: #ffffff;
-  vertical-align: middle;
-  text-transform: uppercase;
+  /*font: inherit;*/
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "PT Sans Narrow", "Arial", sans-serif;
 
-  background-color: #000000;
+  vertical-align: top;
+  text-align: center;
+  color: white;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: black;
   border: none;
+  cursor: pointer;
 }
 
 /*ul {*/
-  /*margin: 0;*/
-  /*padding: 0;*/
-  /*list-style: none;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*list-style: none;*/
 /*}*/
 
 .clearfix::after {
@@ -108,14 +111,14 @@ body {
 .main-header .navigation li {
   display: inline-block;
   font-size: 16px;
-  line-height: 20px;  /* line-height -ом нельзя это делать на случай 2-ой строки */
+  line-height: 20px;
   font-weight: bold;
-  vertical-align: top;  /* QUEST: ? для показа намерений?*/
+  vertical-align: top;
 }
 
 .main-header .navigation a {
   display: block;
-  padding: 26px 20px; /* (72 - 20) / 2 = 26 */
+  padding: 26px 20px;
   text-decoration: none;
   color: white;
 }
@@ -130,42 +133,38 @@ body {
 .main-header .user-block {
   float: right;
   max-width: 110px;
-  /*padding: 26px 20px;*/
-  /*text-align: right;*/
 }
 
-.main-header .user-block a {  /* QUEST: == & .btn-login */ /* upd imho class need */
+.main-header .user-block .login {
   position: relative;
-  /*display: inline-block;*/  /* TODO: t=1:22 */
-  /*padding-left: 50px;*/ /* icon */
+  display: inline-block;
+  padding: 26px 20px 26px 50px;
+  vertical-align: top;
   font-size: 16px;
-  line-height: 20px;    /* == */
-  display: block;
+  line-height: 20px;
   font-weight: bold;
-  padding: 26px 20px; /* (72 - 20) / 2 = 26 */
   text-decoration: none;
   color: white;
 }
 
-.main-header .user-block a:hover { /* QUEST: == & .btn-login */
+.main-header .user-block .login:hover {
   background-color: #242424;
   /* TODO: add animation */
 }
 
-.main-header .user-block a::before { /* TODO: Разобраться t=1:25 & NEED CONTAINER*/
+.main-header .user-block .login::before {
   content: "";
   position: absolute;
-  top: 28px;  /* QUEST: align top-text-line */
+  top: 28px;
   left: 20px;
   width: 18px;
-  height: 18px;
-  /*background: transparent ...;  TODO: sprite t=1:26 && transparent imho good*/
-  opacity: 0.3; /* TODO: NEED CONTAINER */
+  height: 16px;
+  background: transparent url(../img/sprite-icons.png) no-repeat -10px -125px;
+  opacity: 0.3;
 }
 
-/*.main-header .user-block a:hover::before*/ /* QUEST */
-.main-header .user-block a::before:hover {
-  opacity: 0.1;
+.main-header .user-block .login:hover::before {
+  opacity: 1;
   /* TODO: add animation */
 }
 
@@ -203,16 +202,16 @@ main .features article:not(:last-child) {
   margin-right: 20px;
 }
 
-main .features article h3 { /* QUEST: TODO: Разобраться c h_ */
-  display: block; /* QUEST: ok? */
-  position: relative; /* QUEST: display<->position upd: see main .features article h3::after*/
-  margin-bottom: 30px;  /* QUEST: t=1:36 t=1:40 t=1:41(O_o)*/
-  padding-bottom: 35px; /* -//- */
+main .features article h3 {
+  /*display: block;*/
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 35px;
   font-size: 30px;
   line-height: 42px;
 }
 
-main .features article h3::after {  /* QUEST: длинные имена =( */
+main .features article h3::after {
   /* TODO-again (!!!) t=1:41 */
   content: "";
   position: absolute;
@@ -227,39 +226,39 @@ main .features article h3::after {  /* QUEST: длинные имена =( */
   transform: rotate(45deg); /* ide ? */
 }
 
-main .features article p { /* QUEST: TODO: Разобраться c h_ */
-  padding: 10px; /* QUEST: можно всегда так делать? Нет ли проблем? */
-  padding-bottom: 0; /* QUEST: не удобно ( */
+main .features article p {
+  padding: 10px;
+  padding-bottom: 0;
 }
 
 /*- .index-content -*/
 
-main .index-content:first-of-type { /* QUEST: Как лучше это сделать? */
+main .index-content:first-of-type {
   margin-top: 80px;
 }
 
-main .index-content:not(:first-of-type) { /* QUEST: -//- */
+main .index-content:not(:first-of-type) {
   margin-top: 35px;
 }
 
 main .index-content {
   padding: 50px 80px;
   color: black;
-  background: #f8f5f2 url("..");  /* TODO: image && shadow t=1:46*/
+  background: url("../img/separate-line.png") no-repeat center,
+  #f8f5f2 url("../img/pattern-bg.jpg");
 }
 
-main .index-content h2 {  /* QUEST: порядок классов =/ */
+main .index-content h2 {
   margin: 0;
-  margin-bottom: 25px;  /* quest: -//- */
+  margin-bottom: 25px;
   font-size: 30px;
   line-height: 42px;
 }
 
-main .index-content p {  /* quest: -//- */
+main .index-content p {
   margin: 0;
-  margin-bottom: 25px;  /* quest: -//- */
+  margin-bottom: 25px;
 }
-
 
 main .index-content .left-section {
   float: left;
@@ -271,8 +270,44 @@ main .index-content .right-section {
   width: 300px;
 }
 
-main .index-content .news {
-  /* TODO: t=1:47*/
+main .index-content .news article {
+  margin-bottom: 25px;
+}
+
+main .index-content .news article p {
+  margin-bottom: 0;
+}
+
+main .index-content .news article time {
+  text-transform: none;
+}
+
+main .index-content .gallery {
+  position: relative;
+  height: 260px;
+}
+
+main .index-content .gallery .gallery-content {
+  height: 164px;
+  margin: 0;
+  background-color: gray;
+  border: 7px solid white;
+}
+
+main .index-content .gallery .btn {
+  box-sizing: border-box; /* QUEST: */
+  position: absolute;
+  bottom: 0;
+  width: 140px;
+  margin: 0;
+}
+
+main .index-content .photo .prev {
+  left: 0;
+}
+
+main .index-content .photo .next {
+  right: 0;
 }
 
 /* ======================== */
