@@ -68,6 +68,10 @@ body {
   cursor: pointer;
 }
 
+.btn:hover {
+  background-color: #663d15;
+}
+
 /*ul {*/
 /*margin: 0;*/
 /*padding: 0;*/
