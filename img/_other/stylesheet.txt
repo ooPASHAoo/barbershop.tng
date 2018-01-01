@@ -10,26 +10,44 @@
     background-position: -10px -10px;
 }
 
-.sprite-icon-facebook {
-    width: 12px;
-    height: 22px;
+.sprite-icon-fb {
+    width: 43px;
+    height: 43px;
     background-position: -10px -42px;
 }
 
-.sprite-icon-instagram {
-    width: 21px;
-    height: 21px;
-    background-position: -10px -84px;
+.sprite-icon-fb-black {
+    width: 43px;
+    height: 43px;
+    background-position: -10px -105px;
+}
+
+.sprite-icon-in {
+    width: 43px;
+    height: 43px;
+    background-position: -10px -168px;
+}
+
+.sprite-icon-in-black {
+    width: 43px;
+    height: 43px;
+    background-position: -10px -231px;
 }
 
 .sprite-icon-login {
     width: 18px;
     height: 16px;
-    background-position: -10px -125px;
+    background-position: -10px -294px;
 }
 
-.sprite-icon-vkontakte {
-    width: 25px;
-    height: 16px;
-    background-position: -10px -161px;
+.sprite-icon-vk {
+    width: 43px;
+    height: 43px;
+    background-position: -10px -330px;
+}
+
+.sprite-icon-vk-black {
+    width: 43px;
+    height: 43px;
+    background-position: -10px -393px;
 }
