@@ -1,39 +1,3 @@
-/* ======================= */
-/* ===== DEVELOPMENT ===== */
-/* ======================= */
-
-/*min-width: 30px; !* TEST ONLY *!*/
-/*min-height: 70px; !* TEST ONLY *!*/
-
-/*background-color: rgba(200, 200, 0, 0.2); !* TEST ONLY *!*/
-/*outline: 1px solid rgba(200, 200, 0, 0.8); !* TEST ONLY *!*/
-
-/*.main-header,*/
-/*main,*/
-/*.main-footer {*/
-/*background-color: rgba(100, 0, 0, 0.2); !* TEST ONLY *!*/
-/*outline: 1px solid rgba(200, 0, 0, 0.8); !* TEST ONLY *!*/
-/*}*/
-
-/*.main-header .navigation,*/
-/*.main-header .user-block,*/
-/*main .logo,*/
-/*main .features,*/
-/*main .index-content,*/
-/*.main-footer .contacts,*/
-/*.main-footer .social,*/
-/*.main-footer .copyright {*/
-/*background-color: rgba(0, 100, 0, 0.4); !* TEST ONLY *!*/
-/*outline: 1px solid rgba(0, 200, 0, 0.8); !* TEST ONLY *!*/
-/*}*/
-
-/*main .features article,*/
-/*main .index-content .left-section,*/
-/*main .index-content .right-section {*/
-/*background-color: rgba(0, 0, 100, 0.2); !* TEST ONLY *!*/
-/*outline: 1px solid rgba(0, 0, 200, 0.8); !* TEST ONLY *!*/
-/*}*/
-
 /* ================== */
 /* ===== GLOBAL ===== */
 /* ================== */
@@ -51,18 +15,11 @@ body {
   display: inline-block;
   margin-right: 16px;
   padding: 10px 30px;
-
-  /*font: inherit;*/
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-  font-family: "PT Sans Narrow", "Arial", sans-serif;
-
+  font: inherit;
   vertical-align: top;
   text-align: center;
   color: white;
-
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   text-decoration: none;
   background-color: black;
   border: none;
@@ -72,12 +29,6 @@ body {
 .btn:hover {
   background-color: #663d15;
 }
-
-/*ul {*/
-/*margin: 0;*/
-/*padding: 0;*/
-/*list-style: none;*/
-/*}*/
 
 .clearfix::after {
   content: "";
@@ -96,10 +47,22 @@ body {
 
 .main-header {
   background-color: black;
+}
+
+.main-header a {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  text-decoration: none;
   color: white;
 }
 
-/*- .navigation -*/
+.main-header a:hover {
+  background-color: #242424;
+  /* TODO: add animation */
+}
+
+/* --- .navigation --- */
 
 .main-header .navigation {
   float: left;
@@ -115,25 +78,15 @@ body {
 
 .main-header .navigation li {
   display: inline-block;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: bold;
   vertical-align: top;
 }
 
-.main-header .navigation a {
+.main-header .navigation li a {
   display: block;
   padding: 26px 19px;
-  text-decoration: none;
-  color: white;
 }
 
-.main-header .navigation a:hover {
-  background-color: #242424;
-  /* TODO: add animation */
-}
-
-/*- .user-block -*/
+/* --- .user-block --- */
 
 .main-header .user-block {
   float: right;
@@ -145,16 +98,6 @@ body {
   display: inline-block;
   padding: 26px 20px 26px 50px;
   vertical-align: top;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
-.main-header .user-block .login:hover {
-  background-color: #242424;
-  /* TODO: add animation */
 }
 
 .main-header .user-block .login::before {
@@ -178,20 +121,18 @@ body {
 /* ================ */
 
 main {
-  padding-top: 60px; /* QUEST: margin-top || margin-bottom to parent */
+  padding-top: 60px;
   padding-bottom: 65px;
 }
 
-/*- .logo -*/
+/* --- .logo --- */
 
 main .logo {
   display: block;
-  /*width: 368px; !* QUEST: t=1:33"Защита от дурака и блоку и img и в html О_о" нужно ли ? || min-width || max-width *!*/
-  /*height: 204px;  !* QUEST: -//- *!*/
   margin: 0 auto;
 }
 
-/*- .features -*/
+/* --- .features --- */
 
 main .features {
   margin-top: 22px;
@@ -208,28 +149,26 @@ main .features article:not(:last-child) {
 }
 
 main .features article h3 {
-  /*display: block;*/
   position: relative;
+  padding-bottom: 30px;
   margin-top: 0;
   margin-bottom: 30px;
-  padding-bottom: 30px;
   font-size: 30px;
   line-height: 42px;
 }
 
 main .features article h3::after {
-  /* TODO-again (!!!) t=1:41 */
   content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
 
-  display: block; /*need?*/
+  display: block;
   width: 20px;
   height: 20px;
-  margin-left: -10px; /*pzdc*/
+  margin-left: -10px; /* translate(-50%, 0) */
   background-color: white;
-  transform: rotate(45deg); /* ide ? */
+  transform: rotate(45deg);
 }
 
 main .features article p {
@@ -237,7 +176,7 @@ main .features article p {
   padding: 0 5px;
 }
 
-/*- .index-content -*/
+/* --- .index-content --- */
 
 main .index-content:first-of-type {
   margin-top: 76px;
@@ -248,22 +187,20 @@ main .index-content:not(:first-of-type) {
 }
 
 main .index-content {
-  padding: 47px 80px 50px 80px;
+  padding: 50px 80px;
   color: black;
   background: url("../img/separate-line.png") no-repeat center,
   #f8f5f2 url("../img/pattern-bg.jpg");
 }
 
 main .index-content h2 {
-  margin: 0;
-  margin-bottom: 19px;
+  margin: 0 0 19px;
   font-size: 30px;
   line-height: 42px;
 }
 
 main .index-content p {
-  margin: 0;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
 }
 
 main .index-content .left-section {
@@ -305,9 +242,9 @@ main .index-content .gallery .gallery-content {
 }
 
 main .index-content .gallery .btn {
-  box-sizing: border-box; /* QUEST: */
   position: absolute;
   bottom: 0;
+  box-sizing: border-box; /* QUEST: */
   width: 140px;
   margin: 0;
 }
@@ -327,14 +264,11 @@ main .index-content .reserv input {
   padding: 7px 15px;
   margin-right: 20px;
   margin-bottom: 20px;
-
+  border: 2px solid black;
   font: inherit;
   color: inherit;
   text-transform: inherit;
-
   background-color: #f9f6f3;
-  /*background-color: white;*/
-  border: 2px solid black;
 }
 
 main .index-content .reserv input:nth-child(2n) {
@@ -343,12 +277,12 @@ main .index-content .reserv input:nth-child(2n) {
 
 main .index-content .reserv input:focus {
   border: 2px solid #663d15;
-  /*border: 2px solid red;*/
 }
 
+/* TODO: +-:focus */
+
 main .index-content .reserv .btn {
-  /*clear: both;*/
-  width: 100%;
+  width: 100%; /* border-box ??? */
 }
 
 /* ======================== */
@@ -358,16 +292,15 @@ main .index-content .reserv .btn {
 .main-footer {
   padding-top: 58px;
   padding-bottom: 40px;
-
   background: #222222 url("../img/pattern-footer.png");
-  color: white;
 }
 
-.main-footer p {
+.main-footer p { /* QUEST: tag? */
   margin: 0;
+  /*margin: 0 0 14px;*/
 }
 
-/*- .contacts -*/
+/* --- .contacts --- */
 
 .main-footer .contacts {
   float: left;
@@ -382,13 +315,12 @@ main .index-content .reserv .btn {
   text-decoration: none;
 }
 
-/*- .social -*/
+/* --- .social --- */
 
 .main-footer .social {
   float: left;
   width: 160px;
   margin-left: 70px; /* QUEST: ? */
-
   text-align: center;
 }
 
@@ -436,7 +368,7 @@ main .index-content .reserv .btn {
   background-position: -10px -231px;
 }
 
-/*- .copyright -*/
+/* --- .copyright --- */
 
 .main-footer .copyright {
   float: right;
@@ -448,18 +380,11 @@ main .index-content .reserv .btn {
   margin-bottom: 14px;
 }
 
-/*.main-footer .copyright p {*/
-/*margin: 0;*/
-/*margin-bottom: 15px;*/
-/*text-align: center;*/
-/*}*/
-
 .main-footer .copyright .btn {
-margin-right: 0;
+  margin-right: 0;
 }
 
 .main-footer .copyright .btn:hover {
-
   color: black;
   background-color: white;
 }
