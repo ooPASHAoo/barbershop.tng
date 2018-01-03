@@ -565,6 +565,7 @@ main.main-shop {
 .main-shop .filter input[type="checkbox"]:checked + .custom-checkbox::before {
   transform: rotate(45deg);
 }
+
 .main-shop .filter input[type="checkbox"]:checked + .custom-checkbox::after {
   transform: rotate(-45deg);
 }
@@ -596,6 +597,7 @@ main.main-shop {
 .main-shop .filter input[type="radio"]:checked + .custom-radio::before {
   transform: rotate(45deg);
 }
+
 .main-shop .filter input[type="radio"]:checked + .custom-radio::after {
   transform: rotate(-45deg);
 }
@@ -684,6 +686,118 @@ main.main-shop {
 .main-shop .paginator .btn.active {
   background-color: white;
   color: black;
+}
+
+/* ====================== */
+/* ===== .main-item ===== */
+/* ====================== */
+
+main.main-item {
+  padding-bottom: 37px;
+}
+
+/* --- .photos --- */
+
+.main-item .photos {
+  float:left;
+  width: 460px;
+  margin-top: 52px;
+  font-size: 0;
+  /*background-color: #d0d0d0;*/
+}
+
+.main-item .photos img {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main-item .photos .other-photos {
+  margin-top: 9px;
+}
+
+.main-item .photos .other-photos img {
+  width: 140px;
+  height: auto;
+
+}
+
+.main-item .photos .other-photos img:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+.main-item .photos .other-photos img:last-of-type {
+  margin-right: -1px;
+}
+
+/* --- .description --- */
+
+.main-item .description {
+  float: right;
+  width: 380px;
+  padding-right: 10px;
+  margin-top: 72px;
+  /*background-color: green;*/
+}
+
+.main-item .description .article-id {
+  float: right;
+  color: #aeaeae;
+}
+
+.main-item .description p {
+  margin-top: 30px;
+}
+
+.main-item .description .buy {
+  position: relative;
+  width: 187px;
+  margin-top: 34px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #e5e5e5;
+}
+
+.main-item .description .buy .price {
+  padding: 13px 30px;
+  color: black;
+}
+
+.main-item .description .buy .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 13px 18px;
+  margin: 0;
+}
+
+.main-item .description b {
+  display: block;
+  margin-top: 62px;
+  /*padding-top: 60px;*/
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.main-item .description ul {
+  margin: 27px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-item .description ul li {
+  position: relative;
+  padding-left: 20px;
+  /*margin-bottom: 0;*/
+}
+
+.main-item .description ul li::before {
+  position: absolute;
+  content: "";
+  left: 2px;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  background-color: black;
 }
 
 /* ======================== */
