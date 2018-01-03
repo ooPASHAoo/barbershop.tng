@@ -490,6 +490,202 @@ main .inner-content .short-text {
   padding-right: 65px;
 }
 
+/* ====================== */
+/* ===== .main-shop ===== */
+/* ====================== */
+
+main.main-shop {
+  padding-bottom: 50px;
+}
+
+/* --- .filter --- */
+
+.main-shop .filter {
+  float: left;
+  width: 220px;
+  margin-top: 46px;
+}
+
+.main-shop .filter h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.main-shop .filter h2:not(:first-of-type) {
+  margin-top: 47px;
+}
+
+.main-shop .filter ul {
+  margin: 0;
+  margin-top: 26px;
+  padding: 0;
+  list-style: none;
+}
+
+.main-shop .filter ul li {
+  position: relative;
+  /*margin: 20px 0 20px 45px;*/
+  margin: 13px 0;
+  padding-left: 43px;
+}
+
+.main-shop .filter ul input {
+  display: none;
+}
+
+.main-shop .filter ul label {
+  line-height: 12px;
+  cursor: pointer;
+}
+
+/* _ checkbox _ */
+.main-shop .filter .custom-checkbox {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 1px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid black;
+}
+
+.main-shop .filter input[type="checkbox"]:checked + .custom-checkbox::before,
+.main-shop .filter input[type="checkbox"]:checked + .custom-checkbox::after {
+  position: absolute;
+  content: "";
+  top: 7px;
+  left: 0;
+  width: 16px;
+  height: 2px;
+  background-color: black;
+  border-radius: 1px;
+}
+
+.main-shop .filter input[type="checkbox"]:checked + .custom-checkbox::before {
+  transform: rotate(45deg);
+}
+.main-shop .filter input[type="checkbox"]:checked + .custom-checkbox::after {
+  transform: rotate(-45deg);
+}
+
+/* _ radio _ */
+.main-shop .filter .custom-radio {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 1px;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  border: 2px solid black;
+}
+
+.main-shop .filter input[type="radio"]:checked + .custom-radio::before,
+.main-shop .filter input[type="radio"]:checked + .custom-radio::after {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.main-shop .filter input[type="radio"]:checked + .custom-radio::before {
+  transform: rotate(45deg);
+}
+.main-shop .filter input[type="radio"]:checked + .custom-radio::after {
+  transform: rotate(-45deg);
+}
+
+.main-shop .filter button {
+  text-transform: inherit;
+  margin-top: 30px;
+}
+
+/* --- .shop --- */
+
+.main-shop .shop {
+  float: right;
+  width: 700px;
+  margin-top: 51px;
+  font-size: 0;
+}
+
+.main-shop .shop .item {
+  display: inline-block;
+  vertical-align: top;
+  width: 220px;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main-shop .shop .item:not(:nth-of-type(3n)) {
+  margin-right: 19px;
+}
+
+.main-shop .shop .item h2 {
+  padding: 2px 16px; /* QUEST: top/bottom margin ??? */
+  /*background-color: green;*/
+  /*padding: 0;*/
+
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.main-shop .shop .item h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.main-shop .shop .item h2 span {
+  text-transform: none;
+}
+
+.main-shop .shop .item .buy {
+  position: relative;
+  margin: 10px 16px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #e5e5e5;
+}
+
+.main-shop .shop .item .buy .price {
+  padding: 13px 30px;
+  color: black;
+}
+
+.main-shop .shop .item .buy .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 13px 18px;
+  margin: 0;
+}
+
+/* --- .paginator --- */
+
+.main-shop .paginator {
+  margin-top: 25px;
+}
+
+.main-shop .paginator .btn {
+  font-size: 14px;
+  line-height: 18px;
+  padding: 12px 18px;
+  margin-right: 7px;
+}
+
+.main-shop .paginator .btn.active {
+  background-color: white;
+  color: black;
+}
+
 /* ======================== */
 /* ===== .main-footer ===== */
 /* ======================== */
@@ -597,101 +793,6 @@ main .inner-content .short-text {
 .main-footer .copyright .btn:hover {
   color: black;
   background-color: white;
-}
-
-/* --- .main-shop --- */
-
-main.main-shop {
-  padding-bottom: 50px;
-}
-
-.main-shop .filter {
-  float: left;
-  width: 220px;
-  margin-top: 46px;
-}
-
-.main-shop .filter h2 {
-  margin: 0;
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.main-shop .shop {
-  float: right;
-  width: 700px;
-  margin-top: 51px;
-  font-size: 0;
-}
-
-.main-shop .shop .item {
-  display: inline-block;
-  vertical-align: top;
-  width: 220px;
-  margin-bottom: 20px;
-  background-color: white;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-}
-
-.main-shop .shop .item:not(:nth-of-type(3n)) {
-  margin-right: 19px;
-}
-
-.main-shop .shop .item h2 {
-  padding: 2px 16px; /* QUEST: top/bottom margin ??? */
-  /*background-color: green;*/
-  /*padding: 0;*/
-
-  margin: 0;
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.main-shop .shop .item h2 a {
-  text-decoration: none;
-  color: black;
-}
-
-.main-shop .shop .item h2 span {
-  text-transform: none;
-}
-
-.main-shop .shop .item .buy {
-  position: relative;
-  margin: 10px 16px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  line-height: 18px;
-  background-color: #e5e5e5;
-}
-
-.main-shop .shop .item .buy .price {
-  padding: 13px 30px;
-  color: black;
-}
-
-.main-shop .shop .item .buy .btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 13px 18px;
-  margin: 0;
-}
-
-.main-shop .paginator {
-  margin-top: 25px;
-}
-
-.main-shop .paginator .btn {
-  font-size: 14px;
-  line-height: 18px;
-  padding: 12px 18px;
-  margin-right: 7px;
-}
-
-.main-shop .paginator .btn.active {
-  background-color: white;
-  color: black;
 }
 
 /* ================= */
