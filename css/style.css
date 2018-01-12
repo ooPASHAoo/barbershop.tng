@@ -699,7 +699,7 @@ main.main-item {
 /* --- .photos --- */
 
 .main-item .photos {
-  float:left;
+  float: left;
   width: 460px;
   margin-top: 52px;
   font-size: 0;
@@ -952,11 +952,13 @@ main.main-item {
   display: none;
   position: absolute;
   top: 120px;
-  left: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 300px;
   /*height: 200px;*/
   padding: 50px 80px;
-  transform: translate(-50%, 0);
+  /*transform: translate(-50%, 0);*/
   background: #f8f5f2 url("../img/pattern-bg.jpg") repeat;
   color: black;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
@@ -1069,9 +1071,14 @@ main.main-item {
   position: fixed;
   width: 766px;
   height: 561px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /*top: 50%;*/
+  /*left: 50%;*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  /*transform: translate(-50%, -50%);*/
   background: #e9e5dc url("../img/map.jpg");
   border: 7px solid white;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
@@ -1088,4 +1095,44 @@ main.main-item {
   height: 100%;
   z-index: 100;
   background: rgba(0, 0, 0, 0.5);
+}
+
+/* --- .js-modal-show --- */
+
+@keyframes bounce {
+  00% {
+    transform: translateY(-2000px);
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.js__modal-show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+/* --- .js-modal-error --- */
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.js__modal-error {
+  animation: shake 0.6s;
 }
